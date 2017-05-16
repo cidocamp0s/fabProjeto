@@ -200,11 +200,17 @@ namespace fabProjeto.Telas
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
+            string txtPesquisa = txtPesquisar.Text;
             UsuarioBLL user = new UsuarioBLL();
-            var t = user.procurarRegistroBLL();
+            var t = user.procurarRegistroBLL(txtPesquisa);
 
             dataGridView1.DataSource = t;
 
+        }
+
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            btnProcurar_Click(sender, e);
         }
     }
 }

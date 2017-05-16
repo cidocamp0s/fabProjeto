@@ -111,12 +111,12 @@ namespace fabProjeto.Code.BLL_métodos_
             return user.DeletarUsuarioDAO(usuario);
         }
 
-        public List<usuarioDTO> procurarRegistroBLL()
+        public List<usuarioDTO> procurarRegistroBLL(string txtPesquisa)
         {
 
             UsuariosDAO userDAO = new UsuariosDAO();
 
-            var t = userDAO.PesquisarUsuarioDAO();
+            var t = userDAO.PesquisarUsuarioDAO(txtPesquisa);
 
 
 

@@ -92,13 +92,18 @@ namespace fabProjeto.Code.DAL
 
         }
 
-        public List<usuarioDTO> PesquisarUsuarioDAO()
+        public List<usuarioDTO> PesquisarUsuarioDAO(string txtPesquisa)
         {
+            int pesquisaPorID;
+            bool isID =int.TryParse(txtPesquisa, out  pesquisaPorID);
 
+            string pesquisaPorNome = txtPesquisa;
+
+            
             using (var db = new Contexto())
             {
                IQueryable<usuarioDTO> consultaUsuario = db.Usuario.AsQueryable<usuarioDTO>();
-                consultaUsuario = consultaUsuario.Where(x => x.nome!="cido").AsQueryable<usuarioDTO>();
+                consultaUsuario = consultaUsuario.Where(x => x.nome.StartsWith(pesquisaPorNome) || x.IdUsuario == pesquisaPorID).AsQueryable<usuarioDTO>();
 
 
                 return consultaUsuario.ToList();

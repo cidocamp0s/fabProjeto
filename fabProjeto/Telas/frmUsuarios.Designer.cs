@@ -226,6 +226,7 @@
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(300, 55);
             this.txtPesquisar.ToolTipText = "Procurar por nome ou ID";
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
             // toolStripSeparator3
             // 
