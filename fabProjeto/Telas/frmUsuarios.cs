@@ -36,15 +36,15 @@ namespace fabProjeto.Telas
             usuarioDto.nome = txtUsuario.Text;
             usuarioDto.Senha = txtSenha.Text;
             usuarioDto.Administrador = chkAdm.Checked;
-            user.AdicionarUsuario(usuarioDto);
+            user.AdicionarUsuarioBLL(usuarioDto);
 
             using (var db = new Contexto())
             {
                 db.Set<usuarioDTO>().Add(usuarioDto);
-
+                dataGridView1.DataSource = db.Usuario.ToList();
 
             }
-            frmUsuarios_Load(sender, e);
+            //frmUsuarios_Load(sender, e);
 
 
         }
@@ -52,7 +52,7 @@ namespace fabProjeto.Telas
         private void btnalterar_Click(object sender, EventArgs e)
         {
             UsuarioBLL user = new UsuarioBLL();
-            user.ModificarUsuario(Convert.ToInt32(txtId.Text), txtUsuario.Text, chkAdm.Checked);
+            user.ModificarUsuarioBLL(Convert.ToInt32(txtId.Text), txtUsuario.Text, chkAdm.Checked);
 
             frmUsuarios_Load(sender, e);
 
@@ -100,7 +100,7 @@ namespace fabProjeto.Telas
             usuarioDTO c = new usuarioDTO();
             c.IdUsuario = id;
 
-            user.RemoverRegistro(c);
+            user.RemoverUsuarioBLL(c);
 
 
             frmUsuarios_Load(sender, e);
@@ -148,9 +148,9 @@ namespace fabProjeto.Telas
 
             dataGridView1.CurrentCell = dataGridView1[0, 0];
 
-            txtId.Text = user.PrimeiroRegistro().IdUsuario.ToString();
-            txtUsuario.Text = user.PrimeiroRegistro().nome;
-            txtSenha.Text = user.PrimeiroRegistro().Senha;
+            txtId.Text = user.PrimeiroUsuarioBLL().IdUsuario.ToString();
+            txtUsuario.Text = user.PrimeiroUsuarioBLL().nome;
+            txtSenha.Text = user.PrimeiroUsuarioBLL().Senha;
 
         }
 
@@ -159,9 +159,9 @@ namespace fabProjeto.Telas
             UsuarioBLL user = new UsuarioBLL();
 
             dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.RowCount - 1];
-            txtId.Text = user.UltimoRegistro().IdUsuario.ToString();
-            txtUsuario.Text = user.UltimoRegistro().nome;
-            txtSenha.Text = user.UltimoRegistro().Senha;
+            txtId.Text = user.UltimoUsuarioBLL().IdUsuario.ToString();
+            txtUsuario.Text = user.UltimoUsuarioBLL().nome;
+            txtSenha.Text = user.UltimoUsuarioBLL().Senha;
         }
 
         private void LimparControles()
@@ -202,7 +202,7 @@ namespace fabProjeto.Telas
         {
             string txtPesquisa = txtPesquisar.Text;
             UsuarioBLL user = new UsuarioBLL();
-            var t = user.procurarRegistroBLL(txtPesquisa);
+            var t = user.procurarUsuarioBLL(txtPesquisa);
 
             dataGridView1.DataSource = t;
 

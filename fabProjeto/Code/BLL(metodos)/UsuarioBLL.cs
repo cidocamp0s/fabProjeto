@@ -12,19 +12,21 @@ namespace fabProjeto.Code.BLL_métodos_
     class UsuarioBLL
     {
 
-        public void AdicionarUsuario(usuarioDTO registro)
+        public void AdicionarUsuarioBLL(usuarioDTO registro)
         {
             usuarioDTO userDto = new usuarioDTO();
+
             userDto.nome = registro.nome;
             userDto.Senha = registro.Senha;
             userDto.Administrador = registro.Administrador;
+
             if (userDto.nome != String.Empty || userDto.Senha != string.Empty)
             {
                 UsuariosDAO d = new UsuariosDAO();
                 d.InserirUsuarioDAO(userDto);
 
 
-                MessageBox.Show("Usuário adicionado", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuário adicionado", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -37,7 +39,7 @@ namespace fabProjeto.Code.BLL_métodos_
 
         }
 
-        public void ModificarUsuario(int id, string nome, bool administrador)
+        public void ModificarUsuarioBLL(int id, string nome, bool administrador)
         {
 
             if (!string.IsNullOrEmpty(id.ToString()) || string.IsNullOrEmpty(nome))
@@ -49,13 +51,18 @@ namespace fabProjeto.Code.BLL_métodos_
 
 
                 UsuariosDAO d = new UsuariosDAO();
-                d.UpdateUsuarioDAO(user);
+                d.AtualizarUsuarioDAO(user);
+
+                MessageBox.Show("\n Usuário atualizado com sucesso ", "Sucesso", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
             }
             else
             {
-                MessageBox.Show("naomudou");
+                MessageBox.Show("\n Usuário não atualizado ", "erro", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
+
 
 
 
@@ -68,9 +75,9 @@ namespace fabProjeto.Code.BLL_métodos_
             user = registro;
             UsuariosDAO u = new UsuariosDAO();
 
-            bool eAdministrador = u.ValidarRegistroDAO(user).Item2;
+            bool eAdministrador = u.VerificarUsuarioDAO(user).Item2;
 
-            if (u.ValidarRegistroDAO(user).Item1 == true)
+            if (u.VerificarUsuarioDAO(user).Item1)
             {
                 return Tuple.Create(DialogResult.OK, eAdministrador);
 
@@ -85,11 +92,11 @@ namespace fabProjeto.Code.BLL_métodos_
 
         }
 
-        public usuarioDTO PrimeiroRegistro()
+        public usuarioDTO PrimeiroUsuarioBLL()
         {
 
             UsuariosDAO ultimoUsuario = new UsuariosDAO();
-            usuarioDTO t = ultimoUsuario.PrimeiroRegistroDAO();
+            usuarioDTO t = ultimoUsuario.PrimeiroUsuarioDAO();
 
 
 
@@ -99,19 +106,31 @@ namespace fabProjeto.Code.BLL_métodos_
 
         }
 
-        public usuarioDTO UltimoRegistro()
+        public usuarioDTO UltimoUsuarioBLL()
         {
             UsuariosDAO u = new UsuariosDAO();
             return u.UltimoUsuarioDAO();
         }
 
-        public bool RemoverRegistro(usuarioDTO usuario)
+        public void RemoverUsuarioBLL(usuarioDTO usuario)
         {
-            UsuariosDAO user = new UsuariosDAO();
-            return user.DeletarUsuarioDAO(usuario);
+            if (usuario.IdUsuario > 1)
+            {
+                UsuariosDAO user = new UsuariosDAO();
+                user.DeletarUsuarioDAO(usuario);
+                MessageBox.Show("\n Usuário deletado com sucesso ", "Sucesso", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+            else
+            {
+                MessageBox.Show("\n Usuário não deletado ", "Erro", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
         }
 
-        public List<usuarioDTO> procurarRegistroBLL(string txtPesquisa)
+        public List<usuarioDTO> procurarUsuarioBLL(string txtPesquisa)
         {
 
             UsuariosDAO userDAO = new UsuariosDAO();

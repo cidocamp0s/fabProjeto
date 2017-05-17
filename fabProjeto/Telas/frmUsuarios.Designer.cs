@@ -43,7 +43,6 @@
             this.btn_Primeiro = new System.Windows.Forms.ToolStripButton();
             this.btnAnterior = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnProcurar = new System.Windows.Forms.ToolStripButton();
             this.txtPesquisar = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnProximo = new System.Windows.Forms.ToolStripButton();
@@ -114,7 +113,6 @@
             this.btn_Primeiro,
             this.btnAnterior,
             this.toolStripSeparator4,
-            this.btnProcurar,
             this.txtPesquisar,
             this.toolStripSeparator3,
             this.btnProximo,
@@ -209,22 +207,10 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 55);
             // 
-            // btnProcurar
-            // 
-            this.btnProcurar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnProcurar.Image = ((System.Drawing.Image)(resources.GetObject("btnProcurar.Image")));
-            this.btnProcurar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnProcurar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(52, 52);
-            this.btnProcurar.Text = "toolStripButton7";
-            this.btnProcurar.ToolTipText = "Procurar registro";
-            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
-            // 
             // txtPesquisar
             // 
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(300, 55);
+            this.txtPesquisar.Size = new System.Drawing.Size(350, 55);
             this.txtPesquisar.ToolTipText = "Procurar por nome ou ID";
             this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
@@ -361,7 +347,6 @@
         private System.Windows.Forms.ToolStripButton btn_Primeiro;
         private System.Windows.Forms.ToolStripButton btnAnterior;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton btnProcurar;
         private System.Windows.Forms.ToolStripTextBox txtPesquisar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnProximo;

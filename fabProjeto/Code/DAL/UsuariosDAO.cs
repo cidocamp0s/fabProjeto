@@ -20,6 +20,9 @@ namespace fabProjeto.Code.DAL
             {
                 db.Usuario.Add(registro);
                 db.SaveChanges();
+
+                MessageBox.Show("\n Usuário adicionado com sucesso ", "Sucesso", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
 
 
@@ -27,7 +30,7 @@ namespace fabProjeto.Code.DAL
 
         }
 
-        public bool UpdateUsuarioDAO(usuarioDTO registro)
+        public void AtualizarUsuarioDAO(usuarioDTO registro)
         {
             using (var db = new Contexto())
             {
@@ -38,31 +41,23 @@ namespace fabProjeto.Code.DAL
                 userUpdate.Administrador = registro.Administrador;
                 db.SaveChanges();
 
-                MessageBox.Show("\n Usuário atualizado com sucesso ", "Sucesso", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-
-
-                return true;
-
-
             }
         }
 
-        public bool DeletarUsuarioDAO(usuarioDTO registro)
+        public void DeletarUsuarioDAO(usuarioDTO registro)
         {
             using (var db = new Contexto())
             {
                 var userToRemove = db.Usuario.FirstOrDefault(x => x.IdUsuario == registro.IdUsuario);
                 db.Usuario.Remove(userToRemove);
                 db.SaveChanges();
-
-                return true;
+               
             }
 
 
         }
 
-        public usuarioDTO PrimeiroRegistroDAO()
+        public usuarioDTO PrimeiroUsuarioDAO()
         {
             using (var db = new Contexto())
             {
@@ -82,7 +77,7 @@ namespace fabProjeto.Code.DAL
             }
         }
 
-        public Tuple<bool, bool> ValidarRegistroDAO(usuarioDTO registro)
+        public Tuple<bool, bool> VerificarUsuarioDAO(usuarioDTO registro)
         {
 
             using (var db = new Contexto())
@@ -95,7 +90,7 @@ namespace fabProjeto.Code.DAL
         public List<usuarioDTO> PesquisarUsuarioDAO(string txtPesquisa)
         {
             int pesquisaPorID;
-            bool isID =int.TryParse(txtPesquisa, out  pesquisaPorID);
+           int.TryParse(txtPesquisa, out  pesquisaPorID);
 
             string pesquisaPorNome = txtPesquisa;
 

@@ -106,7 +106,7 @@ namespace fabProjeto.Telas
             userDto.nome = textBox1.Text;
             userDto.Senha = textBox2.Text;
             userDto.Administrador = true;
-            userBll.AdicionarUsuario(userDto);
+            userBll.AdicionarUsuarioBLL(userDto);
 
             btnLogar.Visible = true;
 
