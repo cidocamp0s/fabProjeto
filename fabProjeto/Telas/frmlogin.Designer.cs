@@ -36,6 +36,9 @@
             this.btnLogar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,12 +125,20 @@
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.button3_Click);
             // 
+        // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(307, 281);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(248, 10);
+            this.progressBar1.TabIndex = 10;
+            // 
             // frmlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(589, 390);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnLogar);
             this.Controls.Add(this.label3);
@@ -158,5 +169,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAdicionar;
         public System.Windows.Forms.Button btnLogar;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

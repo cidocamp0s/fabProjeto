@@ -20,17 +20,17 @@ namespace fabProjeto.Code.BLL_métodos_
             userDto.Senha = registro.Senha;
             userDto.Administrador = registro.Administrador;
 
-            if (userDto.nome != String.Empty || userDto.Senha != string.Empty)
+            if (!string.IsNullOrEmpty(userDto.nome) || !string.IsNullOrEmpty(userDto.Senha))
             {
                 UsuariosDAO d = new UsuariosDAO();
                 d.InserirUsuarioDAO(userDto);
 
 
-                MessageBox.Show("Usuário adicionado", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuário adicionado co sucesso", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Usuário não adicionado", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuário não adicionado por falta de dados", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 

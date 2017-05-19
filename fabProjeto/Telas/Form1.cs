@@ -114,7 +114,7 @@ namespace fabProjeto
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUsuarios u = new frmUsuarios();
+            FrmUsuarios u = new FrmUsuarios();
             u.ShowDialog();
         }
 

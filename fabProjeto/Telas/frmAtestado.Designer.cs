@@ -38,7 +38,6 @@
             this.btnUltimo = new System.Windows.Forms.ToolStripButton();
             this.btnAnterior = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnProcurar = new System.Windows.Forms.ToolStripButton();
             this.txtPesquisar = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnProximo = new System.Windows.Forms.ToolStripButton();
@@ -71,7 +70,6 @@
             this.btnUltimo,
             this.btnAnterior,
             this.toolStripSeparator4,
-            this.btnProcurar,
             this.txtPesquisar,
             this.toolStripSeparator3,
             this.btnProximo,
@@ -159,17 +157,6 @@
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 55);
-            // 
-            // btnProcurar
-            // 
-            this.btnProcurar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnProcurar.Image = ((System.Drawing.Image)(resources.GetObject("btnProcurar.Image")));
-            this.btnProcurar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnProcurar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(52, 52);
-            this.btnProcurar.Text = "toolStripButton7";
-            this.btnProcurar.ToolTipText = "Procurar registro";
             // 
             // txtPesquisar
             // 
@@ -337,7 +324,7 @@
             this.MaximumSize = new System.Drawing.Size(1165, 448);
             this.Name = "frmAtestado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAtestado";
+            this.Text = "Atestados";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -357,7 +344,6 @@
         private System.Windows.Forms.ToolStripButton btnUltimo;
         private System.Windows.Forms.ToolStripButton btnAnterior;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton btnProcurar;
         private System.Windows.Forms.ToolStripTextBox txtPesquisar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnProximo;

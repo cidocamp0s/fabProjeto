@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using fabProjeto.Context;
 using fabProjeto.Code.DTO_atributos_;
 
@@ -16,16 +10,19 @@ namespace fabProjeto.Code.DAL
     {
         public void InserirUsuarioDAO(usuarioDTO registro)
         {
-            using (var db = new Contexto())
+            for (int i = 0; i < 200; i++)
             {
-                db.Usuario.Add(registro);
-                db.SaveChanges();
 
-                MessageBox.Show("\n Usuário adicionado com sucesso ", "Sucesso", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+
+                using (var db = new Contexto())
+                {
+                    db.Usuario.Add(registro);
+                    db.SaveChanges();
+
+
+                }
+
             }
-
-
 
 
         }
@@ -97,8 +94,8 @@ namespace fabProjeto.Code.DAL
             
             using (var db = new Contexto())
             {
-               IQueryable<usuarioDTO> consultaUsuario = db.Usuario.AsQueryable<usuarioDTO>();
-                consultaUsuario = consultaUsuario.Where(x => x.nome.StartsWith(pesquisaPorNome) || x.IdUsuario == pesquisaPorID).AsQueryable<usuarioDTO>();
+               IQueryable<usuarioDTO> consultaUsuario = db.Usuario.AsQueryable();
+                consultaUsuario = consultaUsuario.Where(x => x.nome.StartsWith(pesquisaPorNome) || x.IdUsuario == pesquisaPorID).AsQueryable();
 
 
                 return consultaUsuario.ToList();

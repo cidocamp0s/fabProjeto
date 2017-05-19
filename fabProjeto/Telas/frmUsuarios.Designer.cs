@@ -1,6 +1,6 @@
 ﻿namespace fabProjeto.Telas
 {
-    partial class frmUsuarios
+    partial class FrmUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuarios));
             this.label3 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.btnProximo = new System.Windows.Forms.ToolStripButton();
             this.btnUltimo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnImprimir = new System.Windows.Forms.ToolStripButton();
+            this.btnImprimirRelatorioRegistros = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.chkAdm = new System.Windows.Forms.CheckBox();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -118,7 +118,7 @@
             this.btnProximo,
             this.btnUltimo,
             this.toolStripSeparator2,
-            this.btnImprimir});
+            this.btnImprimirRelatorioRegistros});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(881, 55);
@@ -248,17 +248,17 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 55);
             // 
-            // btnImprimir
+            // btnImprimirRelatorioRegistros
             // 
-            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(52, 52);
-            this.btnImprimir.Text = "toolStripButton10";
-            this.btnImprimir.ToolTipText = "Imprime os registros";
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            this.btnImprimirRelatorioRegistros.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImprimirRelatorioRegistros.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirRelatorioRegistros.Image")));
+            this.btnImprimirRelatorioRegistros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnImprimirRelatorioRegistros.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImprimirRelatorioRegistros.Name = "btnImprimirRelatorioRegistros";
+            this.btnImprimirRelatorioRegistros.Size = new System.Drawing.Size(52, 52);
+            this.btnImprimirRelatorioRegistros.Text = "toolStripButton10";
+            this.btnImprimirRelatorioRegistros.ToolTipText = "Imprime os registros";
+            this.btnImprimirRelatorioRegistros.Click += new System.EventHandler(this.btnImprimirRelatorioRegistros_Click);
             // 
             // dataGridView1
             // 
@@ -302,7 +302,7 @@
             this.lbl.TabIndex = 34;
             this.lbl.Text = "ID:";
             // 
-            // frmUsuarios
+            // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -319,9 +319,9 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(897, 459);
-            this.Name = "frmUsuarios";
+            this.Name = "FrmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmUsuarios";
+            this.Text = "Usuários";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -352,7 +352,7 @@
         private System.Windows.Forms.ToolStripButton btnProximo;
         private System.Windows.Forms.ToolStripButton btnUltimo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton btnImprimir;
+        private System.Windows.Forms.ToolStripButton btnImprimirRelatorioRegistros;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox chkAdm;
         private System.Windows.Forms.TextBox txtId;

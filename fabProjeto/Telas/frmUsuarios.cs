@@ -5,9 +5,11 @@ using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using fabProjeto.Code.DTO_atributos_;
 using fabProjeto.Code.BLL_métodos_;
 using fabProjeto.Code.DAL;
@@ -17,10 +19,10 @@ using fabProjeto.Context;
 
 namespace fabProjeto.Telas
 {
-    public partial class frmUsuarios : Form
+    public partial class FrmUsuarios : Form
     {
 
-        public frmUsuarios()
+        public FrmUsuarios()
         {
             InitializeComponent();
 
@@ -30,7 +32,6 @@ namespace fabProjeto.Telas
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
 
-
             UsuarioBLL user = new UsuarioBLL();
             usuarioDTO usuarioDto = new usuarioDTO();
             usuarioDto.nome = txtUsuario.Text;
@@ -38,13 +39,14 @@ namespace fabProjeto.Telas
             usuarioDto.Administrador = chkAdm.Checked;
             user.AdicionarUsuarioBLL(usuarioDto);
 
+
             using (var db = new Contexto())
             {
                 db.Set<usuarioDTO>().Add(usuarioDto);
                 dataGridView1.DataSource = db.Usuario.ToList();
 
             }
-            //frmUsuarios_Load(sender, e);
+
 
 
         }
@@ -70,17 +72,16 @@ namespace fabProjeto.Telas
                 btnRemover.Enabled = false;
                 btnalterar.Enabled = false;
             }
+
             using (var db = new Contexto())
             {
-                var user = db.Usuario.ToList();
-
-                dataGridView1.DataSource = user;
-
+                dataGridView1.DataSource = db.Usuario.ToList();
                 dataGridView1.Columns[0].HeaderText = "ID";
 
             }
 
             LimparControles();
+
 
         }
 
@@ -89,6 +90,8 @@ namespace fabProjeto.Telas
             txtId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             txtUsuario.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             txtSenha.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            chkAdm.Checked = Convert.ToBoolean(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -109,38 +112,31 @@ namespace fabProjeto.Telas
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-
             if (dataGridView1.CurrentRow.Index < dataGridView1.RowCount - 1)
             {
-
-
                 dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.CurrentCell.RowIndex + 1];
 
                 txtId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                txtUsuario.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                txtSenha.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-
-
+                txtUsuario.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txtSenha.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                chkAdm.Checked = Convert.ToBoolean(dataGridView1.CurrentRow.Cells[3].Value.ToString());
 
             }
-
-
-
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Index > 0)
 
-
                 dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.CurrentCell.RowIndex - 1];
 
             txtId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtUsuario.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txtSenha.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtUsuario.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtSenha.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            chkAdm.Checked = Convert.ToBoolean(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+
 
         }
-
 
         private void btn_Primeiro_Click(object sender, EventArgs e)
         {
@@ -151,6 +147,7 @@ namespace fabProjeto.Telas
             txtId.Text = user.PrimeiroUsuarioBLL().IdUsuario.ToString();
             txtUsuario.Text = user.PrimeiroUsuarioBLL().nome;
             txtSenha.Text = user.PrimeiroUsuarioBLL().Senha;
+            chkAdm.Checked = Convert.ToBoolean(user.PrimeiroUsuarioBLL().Administrador);
 
         }
 
@@ -159,9 +156,12 @@ namespace fabProjeto.Telas
             UsuarioBLL user = new UsuarioBLL();
 
             dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.RowCount - 1];
+
             txtId.Text = user.UltimoUsuarioBLL().IdUsuario.ToString();
             txtUsuario.Text = user.UltimoUsuarioBLL().nome;
             txtSenha.Text = user.UltimoUsuarioBLL().Senha;
+            chkAdm.Checked = Convert.ToBoolean(user.UltimoUsuarioBLL().Administrador);
+
         }
 
         private void LimparControles()
@@ -194,9 +194,6 @@ namespace fabProjeto.Telas
             }
         }
 
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-        }
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
@@ -212,7 +209,21 @@ namespace fabProjeto.Telas
         {
             btnProcurar_Click(sender, e);
         }
+
+        private void btnImprimirRelatorioRegistros_Click(object sender, EventArgs e)
+        {
+            frmrelatorio f=new frmrelatorio();
+            f.ShowDialog();
+          
+          
+            
+
+        }
     }
-}
+
+
+
+    }
+
 
 

@@ -41,12 +41,15 @@ namespace fabProjeto.Telas
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+
             AcessoBancoDados conn = new AcessoBancoDados();
 
             if (conn.VerificarSeExistemRegistros())
             {
 
-                if (MessageBox.Show("ADD user?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Não existe usuário cadastrado! \nDeseja adicionar um usuário?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     btnLogar.Visible = false;
                 }
@@ -74,7 +77,13 @@ namespace fabProjeto.Telas
 
                 NomeDeUsuario = usuarioDto.nome;
 
-                this.DialogResult = usuarioBll.VerificarUsuarioBll(usuarioDto).Item1;
+                DialogResult = usuarioBll.VerificarUsuarioBll(usuarioDto).Item1;
+
+
+
+
+
+
 
 
 
@@ -82,10 +91,6 @@ namespace fabProjeto.Telas
 
 
             }
-
-
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
