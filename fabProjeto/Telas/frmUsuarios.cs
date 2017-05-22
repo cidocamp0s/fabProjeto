@@ -160,16 +160,29 @@ namespace fabProjeto.Telas
             txtId.Text = user.UltimoUsuarioBLL().IdUsuario.ToString();
             txtUsuario.Text = user.UltimoUsuarioBLL().nome;
             txtSenha.Text = user.UltimoUsuarioBLL().Senha;
-            chkAdm.Checked = Convert.ToBoolean(user.UltimoUsuarioBLL().Administrador);
+            chkAdm.Checked = user.UltimoUsuarioBLL().Administrador;
 
         }
 
         private void LimparControles()
         {
-            txtUsuario.Text = string.Empty;
-            txtId.Text = string.Empty;
-            txtSenha.Text = String.Empty;
-            chkAdm.Checked = false;
+
+
+            for (int i = 0; i < Controls.Count; i++)
+            {
+                if (Controls[i] is TextBox || Controls[i] is CheckBox)// o controle 1 deste form pode ser convertido pra textbox?
+                                                                     //entao converta o controle 1 pra textbox e faça isso
+                {
+                   ( Controls[i] as TextBox).Clear();
+                    (Controls[i] as CheckBox).Checked = false;
+
+                }
+                
+            }
+
+
+
+
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)

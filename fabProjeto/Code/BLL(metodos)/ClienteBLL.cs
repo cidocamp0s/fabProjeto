@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,9 +11,9 @@ namespace fabProjeto.Code.BLL_métodos_
 {
     class ClienteBLL
     {
-        public void AdicionarClienteBLL( ClienteDTO cliente)
+        public void AdicionarClienteBLL(ClienteDTO cliente)
         {
-            ClienteDTO clienteDTO= new ClienteDTO();
+            ClienteDTO clienteDTO = new ClienteDTO();
 
             clienteDTO.Cidade = cliente.Cidade;
             clienteDTO.Cnpj = cliente.Cnpj;
@@ -26,10 +27,25 @@ namespace fabProjeto.Code.BLL_métodos_
             clienteDTO.observacao = cliente.observacao;
 
 
+            PropertyInfo[] info = typeof(ClienteDTO).GetProperties();
+
+            int haCamposVazios = 0;
+
+            for (int i = 0; i < info.Length; i++)
+            {
+                if (string.IsNullOrEmpty(clienteDTO.GetType().ToString()))
+
+                    haCamposVazios++;
+            }
+
+            MessageBox.Show(info.Length.ToString());
+
+            if (haCamposVazios > 0)
+            {
+                MessageBox.Show("Há cammpos vazios no formulário!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
-
-
     }
 
 

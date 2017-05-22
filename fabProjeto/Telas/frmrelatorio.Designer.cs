@@ -63,7 +63,6 @@
             this.ReportViewer1.Name = "ReportViewer1";
             this.ReportViewer1.Size = new System.Drawing.Size(858, 261);
             this.ReportViewer1.TabIndex = 0;
-            this.ReportViewer1.Load += new System.EventHandler(this.ReportViewer1_Load);
             // 
             // usuariosTableAdapter
             // 

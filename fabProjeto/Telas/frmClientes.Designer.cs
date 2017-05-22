@@ -55,7 +55,7 @@
             this.txtNomeContato = new System.Windows.Forms.TextBox();
             this.txtEnderco = new System.Windows.Forms.TextBox();
             this.txtNomeFantasia = new System.Windows.Forms.TextBox();
-            this.t = new System.Windows.Forms.TextBox();
+            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -69,8 +69,8 @@
             this.btnProcurar = new System.Windows.Forms.ToolStripButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtEmail2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -323,12 +323,12 @@
             this.txtNomeFantasia.Size = new System.Drawing.Size(482, 20);
             this.txtNomeFantasia.TabIndex = 33;
             // 
-            // t
+            // txtRazaoSocial
             // 
-            this.t.Location = new System.Drawing.Point(189, 91);
-            this.t.Name = "t";
-            this.t.Size = new System.Drawing.Size(666, 20);
-            this.t.TabIndex = 32;
+            this.txtRazaoSocial.Location = new System.Drawing.Point(189, 91);
+            this.txtRazaoSocial.Name = "txtRazaoSocial";
+            this.txtRazaoSocial.Size = new System.Drawing.Size(666, 20);
+            this.txtRazaoSocial.TabIndex = 32;
             // 
             // dgvClientes
             // 
@@ -404,6 +404,7 @@
             this.btnLimpar.Size = new System.Drawing.Size(52, 52);
             this.btnLimpar.Text = "toolStripButton3";
             this.btnLimpar.ToolTipText = "Limpar formulário";
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnalterar
             // 
@@ -476,26 +477,26 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 224);
+            this.label6.Location = new System.Drawing.Point(13, 233);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 20);
             this.label6.TabIndex = 54;
             this.label6.Text = "E-mail ";
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 256);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(556, 20);
-            this.textBox1.TabIndex = 55;
+            this.txtEmail.Location = new System.Drawing.Point(12, 256);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(556, 20);
+            this.txtEmail.TabIndex = 55;
             // 
-            // textBox2
+            // txtEmail2
             // 
-            this.textBox2.Location = new System.Drawing.Point(574, 256);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(520, 20);
-            this.textBox2.TabIndex = 57;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtEmail2.Location = new System.Drawing.Point(574, 256);
+            this.txtEmail2.Name = "txtEmail2";
+            this.txtEmail2.Size = new System.Drawing.Size(520, 20);
+            this.txtEmail2.TabIndex = 57;
+            this.txtEmail2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label11
             // 
@@ -503,18 +504,18 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(570, 233);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 20);
+            this.label11.Size = new System.Drawing.Size(152, 20);
             this.label11.TabIndex = 56;
-            this.label11.Text = "E-mail 2";
+            this.label11.Text = "E-mail secundário";
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 553);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtEmail2);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtObservacao);
@@ -535,7 +536,7 @@
             this.Controls.Add(this.txtNomeContato);
             this.Controls.Add(this.txtEnderco);
             this.Controls.Add(this.txtNomeFantasia);
-            this.Controls.Add(this.t);
+            this.Controls.Add(this.txtRazaoSocial);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtId);
@@ -581,7 +582,7 @@
         private System.Windows.Forms.TextBox txtNomeContato;
         private System.Windows.Forms.TextBox txtEnderco;
         private System.Windows.Forms.TextBox txtNomeFantasia;
-        private System.Windows.Forms.TextBox t;
+        private System.Windows.Forms.TextBox txtRazaoSocial;
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtId;
@@ -606,8 +607,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telContatoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn observaçõesDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtEmail2;
         private System.Windows.Forms.Label label11;
     }
 }

@@ -29,47 +29,42 @@ namespace fabProjeto.Telas
 
         private void button1_Click(object sender, EventArgs e)
         {
-           ReportViewer1.Clear();
+           ReportViewer1.Reset();
 
             // Indica o arquivo de relatório que será aberto
             ReportViewer1.LocalReport.ReportEmbeddedResource ="fabProjeto.Telas.Report2.rdlc";
 
 
-            ReportViewer1.LocalReport.DataSources.Clear();
+            //ReportViewer1.LocalReport.DataSources.Clear();
 
             // Especifica o ReportDataSource que será utilizad
             var reportDataSource = new ReportDataSource("DataSet1", usuariosBindingSource);
-
-           
             
             // Limpa DataSource do ReportView para receber o novo ReporDataSource
             ReportViewer1.LocalReport.DataSources.Add(reportDataSource);
             
-
-           
-
             this.ReportViewer1.RefreshReport();
 
 
       
         }
-
-
-
-
-
-
-
-
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            ReportViewer1.Reset();
+
+            ReportViewer1.LocalReport.ReportEmbeddedResource = "fabProjeto.Telas.Report1.rdlc";
+
+            //ReportViewer1.LocalReport.DataSources.Clear();
+
+            var reportDataSource = new ReportDataSource("DataSet1", usuariosBindingSource);
+
+            ReportViewer1.LocalReport.DataSources.Add(reportDataSource);
+
+            this.ReportViewer1.RefreshReport();
         }
 
-        private void ReportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

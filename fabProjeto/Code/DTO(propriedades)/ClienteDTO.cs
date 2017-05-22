@@ -34,6 +34,10 @@ namespace fabProjeto.Code.DTO_propriedades_
 
         //[Column("Cidade")]
 
+        public string Email { get; set; }
+
+        public string Email2 { get; set; }
+
         public string Cidade { get; set; }
 
         //[Column("UF")]

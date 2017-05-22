@@ -26,7 +26,7 @@ namespace fabProjeto.Code.BLL_métodos_
                 d.InserirUsuarioDAO(userDto);
 
 
-                MessageBox.Show("Usuário adicionado co sucesso", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuário adicionado com sucesso", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -34,9 +34,7 @@ namespace fabProjeto.Code.BLL_métodos_
 
             }
 
-
-
-
+            
         }
 
         public void ModificarUsuarioBLL(int id, string nome, bool administrador)
