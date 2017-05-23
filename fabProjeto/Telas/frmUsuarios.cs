@@ -173,8 +173,8 @@ namespace fabProjeto.Telas
                 if (Controls[i] is TextBox || Controls[i] is CheckBox)// o controle 1 deste form pode ser convertido pra textbox?
                                                                      //entao converta o controle 1 pra textbox e faça isso
                 {
-                   ( Controls[i] as TextBox).Clear();
-                    (Controls[i] as CheckBox).Checked = false;
+                   //( Controls[i] as TextBox).Clear();
+                    //(Controls[i] as CheckBox).Checked = false;
 
                 }
                 

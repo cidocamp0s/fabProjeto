@@ -84,6 +84,7 @@ namespace fabProjeto.Telas
 
             var valorSaida = YahooConversionAPI(_valorEntrada, _fromCurrencyCode, _toCurrencyCode);
 
+            label7.Text =  _fromCurrencyCode+ " : "+ txtQuantiaEntrada.Text;
 
             label5.Text = _toCurrencyCode + "  " + string.Format("{0:0,0.00}", valorSaida);
 

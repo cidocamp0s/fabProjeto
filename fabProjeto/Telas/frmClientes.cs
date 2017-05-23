@@ -76,11 +76,11 @@ namespace fabProjeto
             clienteDTO.Email2 = txtEmail2.Text;
             clienteDTO.Endereco = txtEnderco.Text;
             clienteDTO.Estado = cboEstado.SelectedText;
-            clienteDTO.Id = Int32.Parse(txtId.Text);
             clienteDTO.NomeFantasia = txtNomeFantasia.Text;
             clienteDTO.RazaoSocial = txtRazaoSocial.Text;
             clienteDTO.Telefone = mtxtTelefoneCliente.Text;
             clienteDTO.telContato = mtxtTelefoneContato.Text;
+            clienteDTO.observacao = txtObservacao.Text;
 
 
             clienteBLL.AdicionarClienteBLL(clienteDTO);
